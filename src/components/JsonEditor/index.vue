@@ -1,11 +1,13 @@
 <template>
   <div class="json-editor">
+    <!-- (AB76) The textarea is used by CodeMirror   -->
     <textarea ref="textarea" />
   </div>
 </template>
 
 <script>
 import CodeMirror from 'codemirror'
+// (AB76) Import stylesheets from CodeMirror
 import 'codemirror/addon/lint/lint.css'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/rubyblue.css'
@@ -31,6 +33,7 @@ export default {
       }
     }
   },
+  // (AB76) Integrate CodeMirror with Vue.js
   mounted() {
     this.jsonEditor = CodeMirror.fromTextArea(this.$refs.textarea, {
       lineNumbers: true,
